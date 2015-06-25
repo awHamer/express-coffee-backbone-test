@@ -11,19 +11,16 @@ define ['backbone', 'jquery', 'views/UsersRowView'], (Backbone, $, UsersRow) ->
 
     initialize: ->
       @template = _.template $('#users-table').html()
-      console.log 'UsersTable init', UsersRow
       @listenTo @collection, 'sort', @updateData
 
       @updateData()
 
     updateData: ->
       $table = @$('tbody')
-      #console.log 'collection', @collection
 
       _.invoke @_data, 'remove' #clear
 
       @_data = @collection.map (model) =>
-        #console.log 'model', model
         row = new UsersRow model: @collection.get model
         $table.append row.render().$el
         row
@@ -36,7 +33,6 @@ define ['backbone', 'jquery', 'views/UsersRowView'], (Backbone, $, UsersRow) ->
       @
 
     sortElements: (event) ->
-      console.log 'sort triggered manually'
       $el = $(event.currentTarget)
       ns = $el.attr 'column'
       cs = @collection.sortAttribute

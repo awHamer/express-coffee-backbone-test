@@ -29,7 +29,6 @@ define(['backbone', 'jquery', 'views/UsersRowView'], function(Backbone, $, Users
 
     UsersTableView.prototype.initialize = function() {
       this.template = _.template($('#users-table').html());
-      console.log('UsersTable init', UsersRow);
       this.listenTo(this.collection, 'sort', this.updateData);
       return this.updateData();
     };
@@ -62,7 +61,6 @@ define(['backbone', 'jquery', 'views/UsersRowView'], function(Backbone, $, Users
 
     UsersTableView.prototype.sortElements = function(event) {
       var $el, cs, ns;
-      console.log('sort triggered manually');
       $el = $(event.currentTarget);
       ns = $el.attr('column');
       cs = this.collection.sortAttribute;
