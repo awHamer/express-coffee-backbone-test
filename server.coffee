@@ -1,0 +1,1 @@
+require './server/application.coffee'

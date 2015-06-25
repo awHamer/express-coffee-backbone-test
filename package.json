@@ -1,0 +1,13 @@
+{
+  "author": "Igor Ukolov",
+  "name": "express-node-backbone-coffee-test",
+  "description": "Test task",
+  "version": "0.0.0",
+  "dependencies": {
+    "express": "^4.13.0",
+    "swig": "^1.4.2"
+  },
+  "scripts": {
+    "start": "coffee server.coffee"
+  }
+}
